@@ -1,5 +1,6 @@
 import React from "react";
 import "./Hero.styles.css";
+import "./queries.css";
 import hero from "../../images/hero.png";
 import customer_1 from "../../images/customers/customer-1.jpg";
 import customer_2 from "../../images/customers/customer-2.jpg";

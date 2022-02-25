@@ -35,7 +35,6 @@ import gallery_9 from "../../images/gallery/gallery-9.jpg";
 import gallery_10 from "../../images/gallery/gallery-10.jpg";
 import gallery_11 from "../../images/gallery/gallery-11.jpg";
 import gallery_12 from "../../images/gallery/gallery-12.jpg";
-import eating from "../../images/eating.jpg";
 
 const Hero = () => {
   return (

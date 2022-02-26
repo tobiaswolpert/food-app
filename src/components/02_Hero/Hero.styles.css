@@ -14,6 +14,7 @@ body {
   line-height: 1;
   font-weight: 400;
   color: #555;
+  overflow-x: hidden;
 }
 
 /*GENERAL REUSABLE COMPONENTS*/
@@ -140,6 +141,7 @@ body {
 
   /*Because we want to make it stiky later*/
   height: 9.6rem;
+  position: relative;
 }
 
 /*NAVIGATION*/
@@ -791,4 +793,27 @@ strong {
 
 .grid--footer {
   grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1fr;
+}
+
+.icon-open ion-icon {
+  border: none;
+  font-size: 4.8rem;
+  color: #333;
+}
+
+.icon-close ion-icon {
+  border: none;
+  font-size: 4.8rem;
+  color: #333;
+}
+
+.btn-mobile-nav {
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: none;
+}
+
+ion-icon[name="close-outline"] {
+  display: none;
 }

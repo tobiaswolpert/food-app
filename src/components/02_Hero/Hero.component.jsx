@@ -39,7 +39,7 @@ import gallery_12 from "../../images/gallery/gallery-12.jpg";
 const Hero = () => {
   return (
     <div>
-      <header className="header">
+      <header className="header nav-open">
         <a href="#">
           <img className="logo" src={omnifood_logo} alt="Omnifood logo" />
         </a>
@@ -72,6 +72,16 @@ const Hero = () => {
             </li>
           </ul>
         </nav>
+
+        <button className="btn-mobile-nav">
+          <span className="icon-open">
+            <ion-icon name="menu-outline"></ion-icon>
+          </span>
+
+          <span className="icon-close">
+            <ion-icon name="close-outline"></ion-icon>
+          </span>
+        </button>
       </header>
 
       <main>

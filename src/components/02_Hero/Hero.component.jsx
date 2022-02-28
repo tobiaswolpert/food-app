@@ -39,7 +39,7 @@ import gallery_12 from "../../images/gallery/gallery-12.jpg";
 const Hero = () => {
   return (
     <div>
-      <header className="header nav-open">
+      <header className="header">
         <a href="#">
           <img className="logo" src={omnifood_logo} alt="Omnifood logo" />
         </a>

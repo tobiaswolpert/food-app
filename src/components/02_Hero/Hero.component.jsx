@@ -39,51 +39,6 @@ import gallery_12 from "../../images/gallery/gallery-12.jpg";
 const Hero = () => {
   return (
     <div>
-      <header className="header">
-        <a href="#">
-          <img className="logo" src={omnifood_logo} alt="Omnifood logo" />
-        </a>
-        <nav className="main-nav">
-          <ul className="main-nav-list">
-            <li>
-              <a className="main-nav-link" href="#">
-                How it works
-              </a>
-            </li>
-            <li>
-              <a className="main-nav-link" href="#">
-                Meals
-              </a>
-            </li>
-            <li>
-              <a className="main-nav-link" href="#">
-                Testimonials
-              </a>
-            </li>
-            <li>
-              <a className="main-nav-link" href="#">
-                Pricing
-              </a>
-            </li>
-            <li>
-              <a className="main-nav-link nav-cta" href="#">
-                Try for free
-              </a>
-            </li>
-          </ul>
-        </nav>
-
-        <button className="btn-mobile-nav">
-          <span className="icon-open">
-            <ion-icon name="menu-outline"></ion-icon>
-          </span>
-
-          <span className="icon-close">
-            <ion-icon name="close-outline"></ion-icon>
-          </span>
-        </button>
-      </header>
-
       <main>
         <section className="section-hero">
           <div className="hero">

@@ -1,40 +1,67 @@
 import "./navbar.styles.css";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 import omnifood_logo from "../../images/omnifood-logo.png";
 
-const Navbar = () => {
+const Navbar = ({ isVisible }) => {
   const [toggleNavbar, setNavbar] = useState(false);
 
   return (
-    <div className={"header" + (toggleNavbar ? " nav-open" : "")}>
+    <div
+      className={
+        "header" +
+        (toggleNavbar ? " nav-open" : "") +
+        (isVisible ? "" : " sticky")
+      }
+    >
       <a href="#">
         <img className="logo" src={omnifood_logo} alt="Omnifood logo" />
       </a>
       <nav className="main-nav">
         <ul className="main-nav-list">
           <li>
-            <a className="main-nav-link" href="#">
+            <a
+              className="main-nav-link"
+              href="#"
+              onClick={() => setNavbar(false)}
+            >
               How it works
             </a>
           </li>
           <li>
-            <a className="main-nav-link" href="#">
+            <a
+              className="main-nav-link"
+              href="#"
+              onClick={() => setNavbar(false)}
+            >
               Meals
             </a>
           </li>
           <li>
-            <a className="main-nav-link" href="#">
+            <a
+              className="main-nav-link"
+              href="#"
+              onClick={() => setNavbar(false)}
+            >
               Testimonials
             </a>
           </li>
           <li>
-            <a className="main-nav-link" href="#">
+            <a
+              className="main-nav-link"
+              href="#"
+              onClick={() => setNavbar(false)}
+            >
               Pricing
             </a>
           </li>
           <li>
-            <a className="main-nav-link nav-cta" href="#">
+            <a
+              className="main-nav-link nav-cta"
+              href="#"
+              onClick={() => setNavbar(false)}
+            >
               Try for free
             </a>
           </li>

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
+import { Link, animateScroll as scroll } from "react-scroll";
 import "./Hero.styles.css";
 import "./queries.css";
 import hero from "../../images/hero.png";
@@ -36,11 +37,30 @@ import gallery_10 from "../../images/gallery/gallery-10.jpg";
 import gallery_11 from "../../images/gallery/gallery-11.jpg";
 import gallery_12 from "../../images/gallery/gallery-12.jpg";
 
-const Hero = () => {
+const Hero = ({ setVisible, isVisible }) => {
+  const heroRef = useRef(null);
+
+  const callbackFunction = function (entries) {
+    const ent = entries[0];
+    setVisible(ent.isIntersecting);
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(callbackFunction, {
+      root: null,
+      threshold: 0,
+      rootMargin: "-80px",
+    });
+    observer.observe(heroRef.current);
+  }, [heroRef]);
+
   return (
     <div>
       <main>
-        <section className="section-hero">
+        <section
+          ref={heroRef}
+          className={"section-hero" + (isVisible ? "" : " section-hero-sticky")}
+        >
           <div className="hero">
             <div className="hero-text-box">
               <h1 className="heading-primary">
@@ -51,8 +71,11 @@ const Hero = () => {
                 eat healthy again. Tailored to your personal tastes and
                 nutritional needs. We have delivered 250,000+ meals last year!
               </p>
+
               <a href="#" className="btn btn--full margin-right-sm">
-                Start eating well
+                <Link to="cta-section" smooth={true}>
+                  Start eating well
+                </Link>
               </a>
               <a href="#" className="btn btn--outline">
                 Learn more &darr;
@@ -344,7 +367,7 @@ const Hero = () => {
                   alt="Customer Dave"
                   className="testimonial-img"
                 />
-                <blockquote class="testimonial-text">
+                <blockquote className="testimonial-text">
                   Inexpensive, healthy and great-tasting meals, without even
                   having to order manually! It feels truly magical.
                 </blockquote>
@@ -357,7 +380,7 @@ const Hero = () => {
                   alt="Customer Dave"
                   className="testimonial-img"
                 />
-                <blockquote class="testimonial-text">
+                <blockquote className="testimonial-text">
                   The AI algorithm is crazy good, it chooses the right meals for
                   me every time. It's amazing not to worry about food anymore!
                 </blockquote>
@@ -370,7 +393,7 @@ const Hero = () => {
                   alt="Customer Dave"
                   className="testimonial-img"
                 />
-                <blockquote class="testimonial-text">
+                <blockquote className="testimonial-text">
                   Omnifood is a life saver! I just started a company, so there's
                   no time for cooking. I couldn't live without my daily meals
                   now!
@@ -384,7 +407,7 @@ const Hero = () => {
                   alt="Customer Dave"
                   className="testimonial-img"
                 />
-                <blockquote class="testimonial-text">
+                <blockquote className="testimonial-text">
                   I got Omnifood for the whole family, and it frees up so much
                   time! Plus, everything is organic and vegan and without
                   plastic.
@@ -584,7 +607,7 @@ const Hero = () => {
           </div>
         </section>
 
-        <section className="section-cta">
+        <section className="section-cta" id="cta-section">
           <div className="container">
             <div className="cta">
               <div className="cta-text-box">
@@ -599,7 +622,7 @@ const Hero = () => {
 
                 <form className="cta-form" action="#">
                   <div>
-                    <label for="full-name">Full Name</label>
+                    <label htmlFor="full-name">Full Name</label>
                     <input
                       id="full-name"
                       type="text"
@@ -608,7 +631,7 @@ const Hero = () => {
                   </div>
 
                   <div>
-                    <label for="email">Email Address</label>
+                    <label htmlFor="email">Email Address</label>
                     <input id="email" type="email" placeholder="me@email.com" />
                   </div>
 

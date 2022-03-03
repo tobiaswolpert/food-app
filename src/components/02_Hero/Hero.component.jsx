@@ -2,7 +2,8 @@ import React, { useState, useRef, useEffect } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
 import "./Hero.styles.css";
 import "./queries.css";
-import hero from "../../images/hero.png";
+import hero from "../../images/hero.webp";
+import hero2 from "../../images/hero.png";
 import customer_1 from "../../images/customers/customer-1.jpg";
 import customer_2 from "../../images/customers/customer-2.jpg";
 import customer_3 from "../../images/customers/customer-3.jpg";
@@ -96,11 +97,16 @@ const Hero = ({ setVisible, isVisible }) => {
               </div>
             </div>
             <div className="hero-img-box">
-              <img
-                className="hero-img"
-                src={hero}
-                alt="Woman enjoying foor, meals in storage container, and food bowls on a table"
-              />
+              <picture>
+                <source srcset={hero} type="image/webp" />
+                <source srcset={hero2} type="image/png" />
+
+                <img
+                  src={hero2}
+                  className="hero-img"
+                  alt="Woman enjoying foor, meals in storage container, and food bowls on a table"
+                />
+              </picture>
             </div>
           </div>
         </section>
